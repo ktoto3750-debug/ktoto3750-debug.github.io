@@ -1,0 +1,158 @@
+:root {
+    --green: #1db954;
+    --black: #050505;
+    --dark-gray: #111;
+    --gray: #222;
+    --text: #888;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body.dark {
+    background-color: var(--black);
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+}
+
+/* --- ШАПКА --- */
+.head {
+    display: flex; align-items: center;
+    padding: 20px 40px;
+    background: rgba(0,0,0,0.9);
+    border-bottom: 1px solid var(--gray);
+    position: sticky; top: 0; z-index: 100;
+}
+.logo { font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 22px; letter-spacing: -1px; }
+.logo span { color: var(--green); }
+
+.nav { display: flex; gap: 25px; margin-left: 50px; }
+.lnk { color: #666; text-decoration: none; font-size: 13px; font-weight: 700; text-transform: uppercase; transition: 0.3s; }
+.lnk.active, .lnk:hover { color: var(--green); }
+
+.user { margin-left: auto; display: flex; align-items: center; gap: 20px; }
+.vhod { color: #fff; text-decoration: none; font-size: 14px; font-weight: 600; }
+.reg { background: #fff; border: none; padding: 10px 25px; border-radius: 30px; font-weight: 700; cursor: pointer; }
+
+/* --- ГЛАВНАЯ СТРАНИЦА --- */
+.glav { text-align: center; padding: 100px 20px 60px; }
+.ttl { font-family: 'Montserrat'; font-size: 72px; font-weight: 900; line-height: 0.9; letter-spacing: -3px; margin-bottom: 25px; }
+.sub { color: var(--text); font-size: 18px; max-width: 550px; margin: 0 auto 40px; }
+
+.go {
+    background: var(--green); color: #000; border: none;
+    padding: 18px 40px; border-radius: 50px; font-weight: 900;
+    text-transform: uppercase; cursor: pointer; transition: 0.3s;
+}
+.go:hover { transform: scale(1.05); background: #1ed760; }
+
+.wrap { padding: 0 40px 80px; }
+.label { font-family: 'Montserrat'; font-size: 28px; font-weight: 900; margin-bottom: 25px; }
+.setka { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+
+.muz {
+    height: 350px; border-radius: 20px;
+    background-color: var(--dark-gray); background-size: cover; background-position: center;
+    border: 1px solid var(--gray); position: relative; overflow: hidden;
+    cursor: pointer; transition: 0.4s;
+}
+.muz:hover { transform: translateY(-8px); border-color: #555; }
+.muz-info {
+    position: absolute; inset: 0; padding: 25px;
+    display: flex; justify-content: space-between; align-items: flex-end;
+    background: linear-gradient(to top, rgba(0,0,0,0.95), transparent);
+}
+.muz-name { font-weight: 700; font-size: 16px; }
+
+.play {
+    width: 48px; height: 48px; background: var(--green); border-radius: 50%;
+    border: none; display: flex; align-items: center; justify-content: center;
+    cursor: pointer; transition: 0.2s;
+}
+.play:hover { transform: scale(1.1); }
+.play svg { width: 20px; height: 20px; fill: #000; margin-left: 2px; }
+
+/* --- СТУДИЯ --- */
+.studio-page { height: 100vh; display: flex; flex-direction: column; overflow: hidden; }
+.studio-workplace { display: flex; flex: 1; }
+
+.side-bar { width: 240px; background: #0a0a0a; border-right: 1px solid var(--gray); padding: 30px 20px; }
+.tool-head { font-weight: 900; text-transform: uppercase; font-size: 12px; color: var(--text); margin-bottom: 20px; }
+.tool-item { padding: 12px; border-radius: 8px; margin-bottom: 5px; cursor: pointer; color: #ccc; transition: 0.2s; font-size: 14px; }
+.tool-item:hover { background: var(--gray); color: #fff; }
+
+.editor { flex: 1; display: flex; flex-direction: column; background: #111; }
+.top-panel { padding: 15px 30px; border-bottom: 1px solid var(--gray); display: flex; justify-content: space-between; align-items: center; }
+.proj-name { font-size: 18px; font-weight: 700; }
+
+.btn-upload { 
+    background: #333; padding: 8px 16px; border-radius: 5px; 
+    font-size: 12px; font-weight: 700; cursor: pointer; transition: 0.2s;
+}
+.btn-upload:hover { background: #444; }
+
+.track-area { flex: 1; padding: 40px; background: #0e0e0e; display: flex; flex-direction: column; justify-content: center; }
+#waveform { width: 100%; }
+
+.control-deck { 
+    height: 90px; background: #151515; border-top: 1px solid var(--gray);
+    display: flex; align-items: center; padding: 0 40px; gap: 40px; 
+}
+.transport { display: flex; align-items: center; gap: 15px; }
+.btn-play-big { 
+    width: 50px; height: 50px; border-radius: 50%; background: var(--green);
+    border: none; font-size: 20px; cursor: pointer; display: flex; align-items: center; justify-content: center;
+}
+.btn-icon { background: transparent; border: 1px solid #444; color: #fff; width: 35px; height: 35px; border-radius: 5px; cursor: pointer; }
+.btn-icon:hover { border-color: #fff; }
+
+.fx-group { display: flex; flex-direction: column; gap: 5px; min-width: 100px; }
+.fx-group label { font-size: 10px; text-transform: uppercase; color: var(--text); font-weight: 700; }
+input[type=range] { accent-color: var(--green); cursor: pointer; }
+/* --- Drum Pads --- */
+.pads-container {
+    padding: 20px 40px;
+    background: #0a0a0a;
+    border-top: 1px solid var(--gray);
+}
+
+.tool-title {
+    font-size: 10px;
+    text-transform: uppercase;
+    color: var(--text);
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+.pads-grid {
+    display: flex;
+    gap: 15px;
+}
+
+.pad {
+    width: 80px;
+    height: 80px;
+    background: #1a1a1a;
+    border: 2px solid #333;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    font-size: 12px;
+    cursor: pointer;
+    transition: 0.1s;
+    user-select: none;
+}
+
+.pad:active, .pad.playing {
+    background: var(--green);
+    color: #000;
+    transform: scale(0.95);
+    box-shadow: 0 0 20px var(--green);
+}
+
+.tool-item.active {
+    background: var(--gray);
+    color: var(--green);
+    border-left: 3px solid var(--green);
+}
